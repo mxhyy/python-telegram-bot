@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
 # 替换为你的API Token
-TOKEN = "YOUR_API_TOKEN"
+TOKEN =7792292598:AAESQWz1jEfQWw4_6NZ1yt5Dha2LOMbEbuc
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text('Hello! 我是你的机器人。')
