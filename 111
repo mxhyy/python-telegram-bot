@@ -24,4 +24,36 @@ def main():
     updater.idle()
 
 if __name__ == '__main__':
-    main()
+    main().
+import random
+
+# 预定义的运势内容
+LUCKY_COLORS = ["红色", "金色", "蓝色", "绿色", "紫色"]
+FORTUNE_DESCRIPTIONS = [
+    "今天会有意想不到的惊喜！",
+    "保持冷静，机会即将到来。",
+    "注意沟通方式，避免误解。",
+    "适合尝试新事物，突破自我。",
+    "财务方面需谨慎决策。"
+]
+
+def generate_fortune(zodiac: str) -> str:
+    # 生成随机内容
+    stars = "★" * random.randint(1, 5)
+    color = random.choice(LUCKY_COLORS)
+    number = random.randint(1, 99)
+    description = random.choice(FORTUNE_DESCRIPTIONS)
+    
+    # 格式化运势文本
+    return f"""
+🔮 *{zodiac} 今日运势* 🔮
+——————————————
+✨ 幸运指数：{stars}
+🎨 幸运颜色：{color}
+🔢 幸运数字：{number}
+——————————————
+{description}
+"""
+
+pip install python-telegram-bot
+python bot.py
