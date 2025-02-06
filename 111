@@ -1,0 +1,27 @@
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+
+# 替换为你的API Token
+TOKEN = "YOUR_API_TOKEN"
+
+def start(update: Update, context: CallbackContext):
+    update.message.reply_text('Hello! 我是你的机器人。')
+
+def echo(update: Update, context: CallbackContext):
+    user_text = update.message.text
+    update.message.reply_text(f'你发送了: {user_text}')
+
+def main():
+    updater = Updater(TOKEN)
+    dp = updater.dispatcher
+
+    # 注册命令和消息处理器
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
+
+    # 启动轮询（适用于本地测试）
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
