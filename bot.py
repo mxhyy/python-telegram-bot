@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 import requests  # 用于调用运势API
 
-TOKEN = 7652176438:AAF7jHOraltNII5dgCdxe-pBF1Vbvb2g4lA
+
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text('输入/setzodiac设置星座，输入/daily获取今日运势！')
